@@ -1,6 +1,8 @@
 import React from 'react';
 import './main.css';
+import LingoController from './lingoController.js';
 
+var lingoController = new LingoController();
 
 //row for each Sapient lingo
 var LingoRow = React.createClass({
@@ -41,9 +43,7 @@ var LingoTable = React.createClass({
                                  </tr>
                              </thead>
                             
-                             <tbody>{this.state.terms.filter(term => {
-                                return ~term.Name.indexOf(this.props.filterText)})
-                             .map(term => <LingoRow term={term} key={term.name} />)} </tbody>
+                             <tbody>{lingoController.filterData( this.state.terms, this.props.filterText ).map(term => <LingoRow term={term} key={term.name} />)} </tbody>
                          </table>
             );
  
