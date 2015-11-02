@@ -1,4 +1,3 @@
-
 import Immutable from 'immutable';
 import {createStore} from 'redux';
 import Term from './Term';
